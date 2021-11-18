@@ -37,7 +37,9 @@ fetch(url)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.USDBRL['high']
+    const ask = Number(data.USDBRL['ask'])
+    const bid = Number(data.USDBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -54,7 +56,9 @@ fetch(urleur)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.EURBRL['high']
+    const ask = Number(data.EURBRL['ask'])
+    const bid = Number(data.EURBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -71,7 +75,9 @@ fetch(urlgbp)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.GBPBRL['high']
+    const ask = Number(data.GBPBRL['ask'])
+    const bid = Number(data.GBPBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -88,7 +94,9 @@ fetch(urlcad)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.CADBRL['high']
+    const ask = Number(data.CADBRL['ask'])
+    const bid = Number(data.CADBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -104,7 +112,9 @@ fetch(urlarg)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.ARSBRL['high']
+    const ask = Number(data.ARSBRL['ask'])
+    const bid = Number(data.ARSBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -122,7 +132,9 @@ fetch(urlchf)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.CHFBRL['high']
+    const ask = Number(data.CHFBRL['ask'])
+    const bid = Number(data.CHFBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -139,7 +151,9 @@ fetch(urlaud)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.AUDBRL['high']
+    const ask = Number(data.AUDBRL['ask'])
+    const bid = Number(data.AUDBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -155,7 +169,9 @@ fetch(urlclp)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.CLPBRL['high']
+    const ask = Number(data.CLPBRL['ask'])
+    const bid = Number(data.CLPBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
@@ -171,7 +187,9 @@ fetch(urlnzd)
 .then((resp => resp.json()))
 .then(function(data) {
     let cota = data.results
-    let eita = data.NZDBRL['high']
+    const ask = Number(data.NZDBRL['ask'])
+    const bid = Number(data.NZDBRL['bid'])
+    let eita = ((ask + bid)/2).toFixed(4)
     
         
 
