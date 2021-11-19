@@ -32,8 +32,8 @@ section {
 div {
 
 display: inline-block;
-width: 400px;
-height: 400px;
+width: 375px;
+height: 375px;
 margin: auto;
 text-align: center;
 border-radius: 10px;
@@ -42,8 +42,8 @@ border-radius: 10px;
 table {
  table-layout: auto;
 background-color: #594B02;
-width: 400px;
-height: 400px;
+width: 375px;
+height: 375px;
 border: 1px solid whitesmoke;
 font-size: 30px;
 color: #ffdb00;
