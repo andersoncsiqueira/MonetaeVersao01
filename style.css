@@ -83,13 +83,38 @@ td {
     border-radius: 10px;
 }
 
+a {
+    font-family: Money;
+    text-decoration: none;
+    color: #594B02;
+    font-size: 20em;
+}
+
 @media (max-width: 768px) {
    
 
-    section {
+    section  {
+        display: block;
+        height: 1300;
+        margin: auto;   
+    }
+
+    .comercial {
         display: block;
         height: 1300;
         margin: auto;
+
+    }
+
+    a {
+        font-size: 5em;
+        margin: auto;
+    }
+
+    .h1comercial {
+        width: 100vw; 
+        font-size: 3em;
+        width: auto;
     }
     .button {
     margin-top: 10px;
@@ -108,7 +133,7 @@ td {
         font-size: 3em;
         width: auto;
     }
-
+    
     p {
         width: auto;
     }
