@@ -126,3 +126,8 @@ td {
     
     }
 }
+
+tr :hover {
+    background: rgb(18, 19, 18);
+    color: rgb(247, 231, 8);
+}
