@@ -61,6 +61,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .button { 
+    background-image: radial-gradient(#ffe749,#f5d01b);
     font-family: "Money";
     text-align: center;
     font-size: 9.5em;
@@ -74,7 +75,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-right: 10px;
     margin-left: 10px;
     
-    
+
     }
 
 td {
