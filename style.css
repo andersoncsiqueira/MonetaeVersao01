@@ -9,6 +9,7 @@
 }
 body {
     background-image: linear-gradient(to left, #f3f2ee,  #ececec);
+    width: 100vw;
 }
 
 header {
@@ -106,6 +107,12 @@ a {
 
     }
 
+    .titulo {
+        width: 100vw; 
+        font-size: 3em;
+        width: auto;
+    }
+
     a {
         font-size: 5em;
         margin: auto;
@@ -136,6 +143,10 @@ a {
     
     p {
         width: auto;
+    }
+
+    .descont {
+        font-size: 20px;
     }
     
 
