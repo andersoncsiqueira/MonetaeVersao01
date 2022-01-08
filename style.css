@@ -54,6 +54,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 thead{
     border: 1px solid white;
     font-weight: bold;
+    background-image: linear-gradient(#594B02,#594B02,#ffdb00,#594B02,#594B02);
     
 }
 
