@@ -51,6 +51,7 @@ border-radius: 10px;
 table {
 
 background-color: #594B02;
+border-collapse: collapse;
 width: 375px;
 height: 375px;
 border: 1px solid whitesmoke;
