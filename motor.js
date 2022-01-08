@@ -141,9 +141,6 @@ fetch(urlgbp)
     const bid = Number(data.GBPBRL['bid'])
     let eita = (((ask + bid)/2).toFixed(4)*1.077*1.011).toFixed(2)
     
-        
-
-    
     gbpv1.innerHTML = (eita)
 })
 .catch(function(error){
