@@ -296,7 +296,7 @@ fetch(urlclp)
 .then(function(data) {
     const ask = Number(data.CLPBRL['ask'])
     const bid = Number(data.CLPBRL['bid'])
-    let eita = (((ask + bid)/2).toFixed(4)*1.35*1.011).toFixed(4)
+    let eita = (((ask + bid)/2).toFixed(4)*1.35*1.011).toFixed(3)
     
         
 
@@ -312,7 +312,7 @@ fetch(urlclp)
 .then(function(data) {
     const ask = Number(data.CLPBRL['ask'])
     const bid = Number(data.CLPBRL['bid'])
-    let eita = (((ask + bid)/2).toFixed(4)*1.35*1.011).toFixed(4)
+    let eita = (((ask + bid)/2).toFixed(4)*1.35*1.011).toFixed(3)
     
     clpv2.innerHTML = (eita)
 })
@@ -567,7 +567,7 @@ fetch(urlclp)
 .then((resp => resp.json()))
 .then(function(data) {
    
-    let eita = (data.CLPBRL['high']/1.25).toFixed(6)
+    let eita = (data.CLPBRL['high']/1.25).toFixed(3)
     
         
 
@@ -582,7 +582,7 @@ fetch(urlclp)
 .then((resp => resp.json()))
 .then(function(data) {
   
-    let eita = (data.CLPBRL['high']/1.25).toFixed(6)
+    let eita = (data.CLPBRL['high']/1.25).toFixed(3)
     
         
 
