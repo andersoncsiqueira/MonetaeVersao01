@@ -68,24 +68,89 @@ const nzdc1 = document.getElementById('nzdc1')
 const nzdc2 = document.getElementById('nzdc2')
 
                  // CALCULO VENDA   
-fetch(url)
+
+
+
+const getDatas = async (url,coin,place1,place2) => {
+const response = await fetch(url)
+const datas = await response.json()
+                
+                    
+const ask = Number(datas[coin]['ask'])
+const bid = Number(datas[coin]['bid'])
+let eita = (((ask + bid)/2).toFixed(4)*1.06*1.011).toFixed(2)
+place1.innerHTML = (eita)
+place2.innerHTML = (eita-0.02).toFixed(2)
+} 
+                
+
+getDatas(url,'USD',usdv1,usdv2)
+getDatas(urleur,'EUR',eurv1,eurv2)
+getDatas(urlgbp,'GBP',gbpv1,gbpv2)
+getDatas(urlcad,'CAD',cadv1,cadv2)
+getDatas(urlarg,'ARS',argv1,argv2)
+getDatas(urlchf,'CHF',chfv1,chfv2)
+getDatas(urlaud,'AUD',audv1,audv2)
+getDatas(urlclp,'CLP',clpv1,clpv2)
+getDatas(urlnzd,'NZD',nzdv1,nzdv2)
+
+
+
+
+
+const getDatasBuy = async (url,coin,place1,place2) => {
+    const response = await fetch(url)
+    const datas = await response.json()
+                    
+                        
+    const price = (Number(datas[coin]['high'])/1.25).toFixed(2)
+    const price2 = (Number(datas[coin]['high'])/1.2).toFixed(2)
+    place1.innerHTML = (price)
+    place2.innerHTML = (price2)
+    } 
+
+    getDatasBuy(url,'USD',usdc1,usdc2)
+    getDatasBuy(urleur,'EUR',eurc1,eurc2)
+    getDatasBuy(urlgbp,'GBP',gbpc1,gbpc2)
+    getDatasBuy(urlcad,'CAD',cadc1,cadc2)
+    getDatasBuy(urlarg,'ARS',argc1,argc2)
+    getDatasBuy(urlchf,'CHF',chfc1,chfc2)
+    getDatasBuy(urlaud,'AUD',audc1,audc2)
+    getDatasBuy(urlclp,'CLP',clpc1,clpc2)
+    getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
+
+
+/*
+let eita = (data.EURBRL['high']/1.25).toFixed(2)
+    
+        
+
+    
+    eurc1.innerHTML = (eita)
+*/
+
+
+
+
+
+fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL')
 .then((resp => resp.json()))
-.then(function(data) {
+.then(/*function(data) {
     
     const ask = Number(data.USDBRL['ask'])
     const bid = Number(data.USDBRL['bid'])
     let eita = (((ask + bid)/2).toFixed(4)*1.06*1.011).toFixed(2)
     
         
-    
+    console.log(eita,'aqui')
     usdv1.innerHTML = (eita)
-    
-})
+}*/console.log()
+)
 .catch(function(error){
 
 })
 
-
+/*
 fetch(url)
 .then((resp => resp.json()))
 .then(function(data) {
@@ -619,6 +684,28 @@ fetch(urlnzd)
     
     nzdc2.innerHTML = (eita)
 })
+.catch(function(error){
+
+})
+*/
+
+
+
+
+
+fetch('http://economia.awesomeapi.com.br/json/last/USD-BRL')
+.then((resp => resp.json()))
+.then(/*function(data) {
+    
+    const ask = Number(data.USDBRL['ask'])
+    const bid = Number(data.USDBRL['bid'])
+    let eita = (((ask + bid)/2).toFixed(4)*1.06*1.011).toFixed(2)
+    
+        
+    console.log(eita,'aqui')
+    usdv1.innerHTML = (eita)
+}*/console.log()
+)
 .catch(function(error){
 
 })
