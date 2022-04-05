@@ -33,170 +33,54 @@ const nzdv1 = document.getElementById('nzdv1')
 
 
                  // Cotação
-fetch(url)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.USDBRL['ask'])
-    const bid = Number(data.USDBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
+
+
+const getPrice = async (url,coin,place) => {
+    const request = await fetch(url)
+    const response = await request.json()
+    const ask = Number(response[`${coin}`]['ask'])
+    const bid = Number(response[`${coin}`]['bid'])
+    switch (coin) {
+        case 'USD':    
+
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
         
-
+            break;
+        case 'EUR':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'ARS':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'AUD':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'CAD':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'CHF':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'CLP':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'NZD':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+        case 'GBP':
+            place.innerHTML = ((ask + bid)/2).toFixed(4)
+            break;
+    }
     
-    usdv1.innerHTML = (eita)
-})
-.catch(function(error){
+}
 
-})
-
-
-
-fetch(urleur)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.EURBRL['ask'])
-    const bid = Number(data.EURBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    eurv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
-
-
-
-fetch(urlgbp)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.GBPBRL['ask'])
-    const bid = Number(data.GBPBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    gbpv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
-
-
-
-fetch(urlcad)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.CADBRL['ask'])
-    const bid = Number(data.CADBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    cadv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
-
-
-fetch(urlarg)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.ARSBRL['ask'])
-    const bid = Number(data.ARSBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    argv1.innerHTML = (eita)
-})
-
-.catch(function(error){
-
-})
-
-
-
-fetch(urlchf)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.CHFBRL['ask'])
-    const bid = Number(data.CHFBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    chfv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
-
-
-
-fetch(urlaud)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.AUDBRL['ask'])
-    const bid = Number(data.AUDBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    audv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
-
-
-fetch(urlclp)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.CLPBRL['ask'])
-    const bid = Number(data.CLPBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    clpv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
-
-
-fetch(urlnzd)
-.then((resp => resp.json()))
-.then(function(data) {
-    let cota = data.results
-    const ask = Number(data.NZDBRL['ask'])
-    const bid = Number(data.NZDBRL['bid'])
-    let eita = ((ask + bid)/2).toFixed(4)
-    
-        
-
-    
-    nzdv1.innerHTML = (eita)
-})
-.catch(function(error){
-
-})
+getPrice(url,'USD',usdv1)
+getPrice(urleur,'EUR',eurv1)
+getPrice(urlarg,'ARS',argv1)
+getPrice(urlgbp,'GBP',gbpv1)
+getPrice(urlcad,'CAD',cadv1)
+getPrice(urlchf,'CHF',chfv1)
+getPrice(urlaud,'AUD',audv1)
+getPrice(urlclp,'CLP',clpv1)
+getPrice(urlnzd,'NZD',nzdv1)
 
