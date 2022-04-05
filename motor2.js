@@ -30,11 +30,6 @@ const clpv1 = document.getElementById('clpv1')
 
 const nzdv1 = document.getElementById('nzdv1')
 
-
-
-                 // Cotação
-
-
 const getPrice = async (url,coin,place) => {
     const request = await fetch(url)
     const response = await request.json()
