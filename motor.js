@@ -77,11 +77,14 @@ const section = document.querySelector('section')
 const getDatas = async (url,coin,place1,place2) => {
 const response = await fetch(url)
 const datas = await response.json()
-const ask = Number(datas[coin]['ask'])
-const bid = Number(datas[coin]['bid'])
+
+console.log(datas['USDBRL']['ask'])
+
 
 switch (coin) {
     case 'USD':  
+    let ask = Number(datas[`${coin}BRL`]['ask'])
+    let bid = Number(datas[`${coin}BRL`]['bid'])
         place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
         place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
         break;
@@ -117,6 +120,7 @@ switch (coin) {
         place1.innerHTML = (((ask + bid)/2)*1.077*1.011).toFixed(2)
         place2.innerHTML = ((((ask + bid)/2)*1.077*1.011)-0.02).toFixed(2)
         break;
+        
 }
 
 
@@ -125,17 +129,17 @@ switch (coin) {
                     
 
 } 
-                
+             
 
 getDatas(url,'USD',usdv1,usdv2)
-getDatas(urleur,'EUR',eurv1,eurv2)
-getDatas(urlgbp,'GBP',gbpv1,gbpv2)
-getDatas(urlcad,'CAD',cadv1,cadv2)
-getDatas(urlarg,'ARS',argv1,argv2)
-getDatas(urlchf,'CHF',chfv1,chfv2)
-getDatas(urlaud,'AUD',audv1,audv2)
-getDatas(urlclp,'CLP',clpv1,clpv2)
-getDatas(urlnzd,'NZD',nzdv1,nzdv2)
+//getDatas(urleur,'EUR',eurv1,eurv2)
+//getDatas(urlgbp,'GBP',gbpv1,gbpv2)
+//getDatas(urlcad,'CAD',cadv1,cadv2)
+//getDatas(urlarg,'ARS',argv1,argv2)
+//getDatas(urlchf,'CHF',chfv1,chfv2)
+//getDatas(urlaud,'AUD',audv1,audv2)
+//getDatas(urlclp,'CLP',clpv1,clpv2)
+//getDatas(urlnzd,'NZD',nzdv1,nzdv2)
 
 
 
@@ -187,18 +191,18 @@ const getDatasBuy = async (url,coin,place1,place2) => {
 
     } 
 
-    getDatasBuy(url,'USD',usdc1,usdc2)
-    getDatasBuy(urleur,'EUR',eurc1,eurc2)
-    getDatasBuy(urlgbp,'GBP',gbpc1,gbpc2)
-    getDatasBuy(urlcad,'CAD',cadc1,cadc2)
-    getDatasBuy(urlarg,'ARS',argc1,argc2)
-    getDatasBuy(urlchf,'CHF',chfc1,chfc2)
-    getDatasBuy(urlaud,'AUD',audc1,audc2)
-    getDatasBuy(urlclp,'CLP',clpc1,clpc2)
-    getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
+   // getDatasBuy(url,'USD',usdc1,usdc2)
+   // getDatasBuy(urleur,'EUR',eurc1,eurc2)
+   // getDatasBuy(urlgbp,'GBP',gbpc1,gbpc2)
+   // getDatasBuy(urlcad,'CAD',cadc1,cadc2)
+   // getDatasBuy(urlarg,'ARS',argc1,argc2)
+   // getDatasBuy(urlchf,'CHF',chfc1,chfc2)
+   // getDatasBuy(urlaud,'AUD',audc1,audc2)
+   // getDatasBuy(urlclp,'CLP',clpc1,clpc2)
+   // getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
 
 
-const span = document.querySelector('span')
+/*const span = document.querySelector('span')
 
 const blockPrice = (coin,price) => {
     const cadeado = document.createElement('img')
@@ -229,10 +233,9 @@ const blockPriceAuto = (coin,price) => {
     img.classList.add('blockPrice')
 
     td.textContent = 'test'
-    
-    coin.append(td)
 
     const parent = coin.parentElement
+    console.log(parent)
 
     parent.prepend(td)
    // coin.classList.toggle('none')
@@ -243,5 +246,5 @@ const blockPriceAuto = (coin,price) => {
  //   console.log(parent.children)
 }
 
-blockPriceAuto(eurv1,'6')
+blockPriceAuto(eurv1,'6')*/
 
