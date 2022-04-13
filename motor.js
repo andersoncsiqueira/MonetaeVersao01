@@ -77,12 +77,71 @@ const section = document.querySelector('section')
 const getDatas = async (url,coin,place1,place2) => {
 const response = await fetch(url)
 const datas = await response.json()
+let ask = null
+let bid = null    
+switch (coin) {
+    
+    case 'USD':  
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
+        break;
+    case 'EUR':
+         ask = Number(datas[`${coin}BRL`]['ask'])
+         bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
+        break;
+    case 'ARS':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.75*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.75*1.011)).toFixed(2)
+        break;
+    case 'AUD':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.09*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.09*1.011)-0.02).toFixed(2)
+        break;
+    case 'CAD':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.09*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.09*1.011)-0.02).toFixed(2)
+        break;
+    case 'CHF':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.1*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.1*1.011)-0.02).toFixed(2)
+        break;
+    case 'CLP':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.35*1.011).toFixed(4)
+        place2.innerHTML = ((((ask + bid)/2)*1.35*1.011)).toFixed(4)
+        break;
+    case 'NZD':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.1*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.1*1.011)-0.02).toFixed(2)
+        break;
+    case 'GBP':
+        ask = Number(datas[`${coin}BRL`]['ask'])
+        bid = Number(datas[`${coin}BRL`]['bid'])
+        place1.innerHTML = (((ask + bid)/2)*1.077*1.011).toFixed(2)
+        place2.innerHTML = ((((ask + bid)/2)*1.077*1.011)-0.02).toFixed(2)
+        break;
+        
+}
 
 
-let ask = Number(datas[`${coin}BRL`]['ask'])
-    let bid = Number(datas[`${coin}BRL`]['bid'])
-    place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
-    place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
+
+
+                    
 
 } 
              
@@ -99,13 +158,73 @@ getDatas(urlnzd,'NZD',nzdv1,nzdv2)
 
 
 
+
+
 const getDatasBuy = async (url,coin,place1,place2) => {
     const response = await fetch(url)
     const datas = await response.json()
       
-    place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
-    place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+    
      
+    switch (coin) {
+    
+        case 'USD':  
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'EUR':
+             ask = Number(datas[`${coin}BRL`]['ask'])
+             bid = Number(datas[`${coin}BRL`]['bid'])
+             place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+             place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'ARS':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'AUD':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'CAD':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'CHF':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'CLP':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(4)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(4)
+            break;
+        case 'NZD':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+        case 'GBP':
+            ask = Number(datas[`${coin}BRL`]['ask'])
+            bid = Number(datas[`${coin}BRL`]['bid'])
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            break;
+            
+    }
+
 
     } 
 
@@ -136,12 +255,13 @@ const blockPrice = (coin,price) => {
 }
 
 
-blockPrice(usdv3,'5,20')
+
+blockPrice(usdv3,'5,20')*/
 
 const blockPriceAuto = (coin,price) => {
     const img = document.createElement('img')
     const span = document.createElement('span')
-    const td = document.createElement('td')
+    const tdX = document.createElement('td')
 
     
 
@@ -150,12 +270,22 @@ const blockPriceAuto = (coin,price) => {
     img.setAttribute('src','padlock.png')
     img.classList.add('blockPrice')
 
-    td.textContent = 'test'
+    tdX.textContent = price
 
     const parent = coin.parentElement
-    console.log(parent)
+    const dt = Array.from(parent.children)
+    
+    dt.forEach(dt => {
+        
+        if(dt.getAttribute('id')){
+            console.log(dt)
+            dt.classList.add('none')
+        }
+        
+        
+    })
 
-    parent.prepend(td)
+    parent.append(tdX)
    // coin.classList.toggle('none')
 
   //  coin.insertAdjacentElement('afterbegin',cadeado)
@@ -164,5 +294,5 @@ const blockPriceAuto = (coin,price) => {
  //   console.log(parent.children)
 }
 
-blockPriceAuto(eurv1,'6')*/
+//blockPriceAuto(eurv1,'6')
 

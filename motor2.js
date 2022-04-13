@@ -33,39 +33,10 @@ const nzdv1 = document.getElementById('nzdv1')
 const getPrice = async (url,coin,place) => {
     const request = await fetch(url)
     const response = await request.json()
-    const ask = Number(response[`${coin}`]['ask'])
-    const bid = Number(response[`${coin}`]['bid'])
-    switch (coin) {
-        case 'USD':    
-
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-        
-            break;
-        case 'EUR':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'ARS':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'AUD':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'CAD':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'CHF':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'CLP':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'NZD':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-        case 'GBP':
-            place.innerHTML = ((ask + bid)/2).toFixed(4)
-            break;
-    }
+    const ask = Number(response[`${coin}BRL`]['ask'])
+    const bid = Number(response[`${coin}BRL`]['bid'])
+    
+    place.innerHTML = ((ask + bid)/2).toFixed(4)
     
 }
 
