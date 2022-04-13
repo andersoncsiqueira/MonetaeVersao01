@@ -187,3 +187,14 @@ tr :hover {
     background: rgb(18, 19, 18);
     color: rgb(247, 231, 8);
 }
+
+
+.blockPrice {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+.none {
+    display: none;
+}

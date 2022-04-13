@@ -31,6 +31,7 @@ const urlnzd = 'https://economia.awesomeapi.com.br/last/NZD-BRL'
                     // ids das cotacoes na tabela venda e compra
 const usdv1 = document.getElementById('usdv1')
 const usdv2 = document.getElementById('usdv2')
+const usdv3 = document.querySelector('#usdv3')
 const eurv1 = document.getElementById('eurv1')
 const eurv2 = document.getElementById('eurv2')
 const gbpv1 = document.getElementById('gbpv1')
@@ -66,6 +67,8 @@ const clpc1 = document.getElementById('clpc1')
 const clpc2 = document.getElementById('clpc2')
 const nzdc1 = document.getElementById('nzdc1')
 const nzdc2 = document.getElementById('nzdc2')
+
+const section = document.querySelector('section')
 
                  // CALCULO VENDA   
 
@@ -195,4 +198,50 @@ const getDatasBuy = async (url,coin,place1,place2) => {
     getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
 
 
+const span = document.querySelector('span')
+
+const blockPrice = (coin,price) => {
+    const cadeado = document.createElement('img')
+   // cadeado.setAttribute('src','padlock.png')
+   // cadeado.classList.add('blockPrice')
+    usdv1.classList.toggle('none')
+    coin.classList.toggle('none')
+
+  //  coin.insertAdjacentElement('afterbegin',cadeado)
+
+    span.textContent = price
+    
+}
+
+
+blockPrice(usdv3,'5,20')
+
+const blockPriceAuto = (coin,price) => {
+    const img = document.createElement('img')
+    const span = document.createElement('span')
+    const td = document.createElement('td')
+
+    
+
+
+
+    img.setAttribute('src','padlock.png')
+    img.classList.add('blockPrice')
+
+    td.textContent = 'test'
+    
+    coin.append(td)
+
+    const parent = coin.parentElement
+
+    parent.prepend(td)
+   // coin.classList.toggle('none')
+
+  //  coin.insertAdjacentElement('afterbegin',cadeado)
+
+    span.textContent = price
+ //   console.log(parent.children)
+}
+
+blockPriceAuto(eurv1,'6')
 
