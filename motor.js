@@ -78,128 +78,46 @@ const getDatas = async (url,coin,place1,place2) => {
 const response = await fetch(url)
 const datas = await response.json()
 
-console.log(datas['USDBRL']['ask'])
 
-
-switch (coin) {
-    case 'USD':  
-    let ask = Number(datas[`${coin}BRL`]['ask'])
+let ask = Number(datas[`${coin}BRL`]['ask'])
     let bid = Number(datas[`${coin}BRL`]['bid'])
-        place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
-        break;
-    case 'EUR':
-        place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
-        break;
-    case 'ARS':
-        place1.innerHTML = (((ask + bid)/2)*1.75*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.75*1.011)).toFixed(2)
-        break;
-    case 'AUD':
-        place1.innerHTML = (((ask + bid)/2)*1.09*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.09*1.011)-0.02).toFixed(2)
-        break;
-    case 'CAD':
-        place1.innerHTML = (((ask + bid)/2)*1.09*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.09*1.011)-0.02).toFixed(2)
-        break;
-    case 'CHF':
-        place1.innerHTML = (((ask + bid)/2)*1.1*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.1*1.011)-0.02).toFixed(2)
-        break;
-    case 'CLP':
-        place1.innerHTML = (((ask + bid)/2)*1.35*1.011).toFixed(4)
-        place2.innerHTML = ((((ask + bid)/2)*1.35*1.011)).toFixed(4)
-        break;
-    case 'NZD':
-        place1.innerHTML = (((ask + bid)/2)*1.1*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.1*1.011)-0.02).toFixed(2)
-        break;
-    case 'GBP':
-        place1.innerHTML = (((ask + bid)/2)*1.077*1.011).toFixed(2)
-        place2.innerHTML = ((((ask + bid)/2)*1.077*1.011)-0.02).toFixed(2)
-        break;
-        
-}
-
-
-
-
-                    
+    place1.innerHTML = (((ask + bid)/2)*1.06*1.011).toFixed(2)
+    place2.innerHTML = ((((ask + bid)/2)*1.06*1.011)-0.02).toFixed(2)
 
 } 
              
 
 getDatas(url,'USD',usdv1,usdv2)
-//getDatas(urleur,'EUR',eurv1,eurv2)
-//getDatas(urlgbp,'GBP',gbpv1,gbpv2)
-//getDatas(urlcad,'CAD',cadv1,cadv2)
-//getDatas(urlarg,'ARS',argv1,argv2)
-//getDatas(urlchf,'CHF',chfv1,chfv2)
-//getDatas(urlaud,'AUD',audv1,audv2)
-//getDatas(urlclp,'CLP',clpv1,clpv2)
-//getDatas(urlnzd,'NZD',nzdv1,nzdv2)
-
-
+getDatas(urleur,'EUR',eurv1,eurv2)
+getDatas(urlgbp,'GBP',gbpv1,gbpv2)
+getDatas(urlcad,'CAD',cadv1,cadv2)
+getDatas(urlarg,'ARS',argv1,argv2)
+getDatas(urlchf,'CHF',chfv1,chfv2)
+getDatas(urlaud,'AUD',audv1,audv2)
+getDatas(urlclp,'CLP',clpv1,clpv2)
+getDatas(urlnzd,'NZD',nzdv1,nzdv2)
 
 
 
 const getDatasBuy = async (url,coin,place1,place2) => {
     const response = await fetch(url)
     const datas = await response.json()
-                    
+      
+    place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
+    place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
      
-    switch (coin) {
-        case 'USD':  
-        place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-        place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-        case 'EUR':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-        case 'ARS':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-        case 'AUD':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-        case 'CAD':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-        place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-        case 'CHF':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-        case 'CLP':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(4)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(4)
-            break;
-        case 'NZD':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.3).toFixed(2)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-            break;
-        case 'GBP':
-            place1.innerHTML = (Number(datas[coin]['high'])/1.25).toFixed(2)
-            place2.innerHTML = (Number(datas[coin]['high'])/1.2).toFixed(2)
-            break;
-    }
 
     } 
 
-   // getDatasBuy(url,'USD',usdc1,usdc2)
-   // getDatasBuy(urleur,'EUR',eurc1,eurc2)
-   // getDatasBuy(urlgbp,'GBP',gbpc1,gbpc2)
-   // getDatasBuy(urlcad,'CAD',cadc1,cadc2)
-   // getDatasBuy(urlarg,'ARS',argc1,argc2)
-   // getDatasBuy(urlchf,'CHF',chfc1,chfc2)
-   // getDatasBuy(urlaud,'AUD',audc1,audc2)
-   // getDatasBuy(urlclp,'CLP',clpc1,clpc2)
-   // getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
+    getDatasBuy(url,'USD',usdc1,usdc2)
+    getDatasBuy(urleur,'EUR',eurc1,eurc2)
+    getDatasBuy(urlgbp,'GBP',gbpc1,gbpc2)
+    getDatasBuy(urlcad,'CAD',cadc1,cadc2)
+    getDatasBuy(urlarg,'ARS',argc1,argc2)
+    getDatasBuy(urlchf,'CHF',chfc1,chfc2)
+    getDatasBuy(urlaud,'AUD',audc1,audc2)
+    getDatasBuy(urlclp,'CLP',clpc1,clpc2)
+    getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
 
 
 /*const span = document.querySelector('span')
