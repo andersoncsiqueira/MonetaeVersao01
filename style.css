@@ -194,3 +194,18 @@ tr :hover {
     display: none;
 }
 
+.animeChange {
+animation: anime 3s 2s linear forwards;
+border-radius: 0px;
+}
+
+@keyframes anime {
+
+0%{transform: rotateY(0deg) translateX(0px)}
+100%{transform: rotatey(360deg) translateX(0px) }
+
+
+}
+
+
+

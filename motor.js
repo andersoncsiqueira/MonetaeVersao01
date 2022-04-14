@@ -258,18 +258,20 @@ const blockPrice = (coin,price) => {
 
 blockPrice(usdv3,'5,20')*/
 
-const blockPriceAuto = (coin,price) => {
+const blockPriceAuto = (coin,price,sgl) => {
     const img = document.createElement('img')
     const span = document.createElement('span')
     const tdX = document.createElement('td')
     const cadeado = document.createElement('img')
+    const change = document.createElement('img')
+
+    tdX.setAttribute('id',`tdX${sgl}`)
     cadeado.setAttribute('src','padlock.png')
     cadeado.classList.add('blockPrice')
-    const change = document.createElement('img')
+    cadeado.setAttribute('id','changeforblock')
     change.setAttribute('src','refresh-svgrepo-com.svg')
     change.classList.add('blockPrice')
-
-
+    change.setAttribute('id',`changeforfreeprice${sgl}`)
     img.setAttribute('src','padlock.png')
     img.classList.add('blockPrice')
 
@@ -278,14 +280,10 @@ const blockPriceAuto = (coin,price) => {
     const parent = coin.parentElement
     const dt = Array.from(parent.children)
     
-    dt.forEach(dt => {
-        
+    dt.forEach(dt => {     
         if(dt.getAttribute('id')){
-            console.log(dt)
             dt.classList.add('none')
-        }
-        
-        
+        }   
     })
 
     parent.append(tdX)
@@ -298,8 +296,20 @@ const blockPriceAuto = (coin,price) => {
  //   console.log(parent.children)
 }
 
-blockPriceAuto(eurv1,'5,98')
-blockPriceAuto(usdv1,'5,20')
-blockPriceAuto(cadv1,'4,5')
-blockPriceAuto(gbpv1,'6,72')
 
+blockPriceAuto(eurv1,'5,98','EUR')
+blockPriceAuto(usdv1,'5,20','USD')
+blockPriceAuto(cadv1,'4,5','CAD')
+blockPriceAuto(gbpv1,'6,72','GBP')
+
+/*const change = document.querySelector('#changeforfreepriceUSD')
+
+change.addEventListener('click', ()=> {
+    const tdX = document.querySelector(`#tdXUSD`) // na função a SGL tem que vir por argumento
+    
+    tdX.classList.toggle('animeChange')
+    setTimeout(()=> tdX.textContent = '5,40',3000)
+
+    
+})
+*/
