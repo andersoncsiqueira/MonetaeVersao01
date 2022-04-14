@@ -213,8 +213,8 @@ const getDatasBuy = async (url,coin,place1,place2) => {
         case 'NZD':
             ask = Number(datas[`${coin}BRL`]['ask'])
             bid = Number(datas[`${coin}BRL`]['bid'])
-            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
-            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.2).toFixed(2)
+            place1.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.3).toFixed(2)
+            place2.innerHTML = (Number(datas[`${coin}BRL`]['high'])/1.25).toFixed(2)
             break;
         case 'GBP':
             ask = Number(datas[`${coin}BRL`]['ask'])
@@ -262,9 +262,12 @@ const blockPriceAuto = (coin,price) => {
     const img = document.createElement('img')
     const span = document.createElement('span')
     const tdX = document.createElement('td')
-
-    
-
+    const cadeado = document.createElement('img')
+    cadeado.setAttribute('src','padlock.png')
+    cadeado.classList.add('blockPrice')
+    const change = document.createElement('img')
+    change.setAttribute('src','refresh-svgrepo-com.svg')
+    change.classList.add('blockPrice')
 
 
     img.setAttribute('src','padlock.png')
@@ -286,13 +289,17 @@ const blockPriceAuto = (coin,price) => {
     })
 
     parent.append(tdX)
-   // coin.classList.toggle('none')
+   
 
-  //  coin.insertAdjacentElement('afterbegin',cadeado)
+    parent.append(cadeado)
+    parent.append(change)
 
     span.textContent = price
  //   console.log(parent.children)
 }
 
-//blockPriceAuto(eurv1,'6')
+blockPriceAuto(eurv1,'5,98')
+blockPriceAuto(usdv1,'5,20')
+blockPriceAuto(cadv1,'4,5')
+blockPriceAuto(gbpv1,'6,72')
 
