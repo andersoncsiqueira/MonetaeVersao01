@@ -307,7 +307,7 @@ const blockPriceAuto = (coin,price,sgl) => {
     cadeado.classList.add('blockPrice','on')
     cadeado.setAttribute('id','changeforblock')
     change.setAttribute('src','refresh-svgrepo-com.svg')
-    change.classList.add('blockPrice')
+    change.classList.add('refreshPrice')
     change.setAttribute('id',`changeforfreeprice${sgl}`)
     img.setAttribute('src','padlock.png')
     img.classList.add('blockPrice',)
