@@ -257,7 +257,7 @@ const blockPrice = (coin,price) => {
 
 
 blockPrice(usdv3,'5,20')*/
-let changeStatusPrice = (coin,change,sgl) => {
+let changeStatusPrice = (coin,change,sgl,price) => {
     
     
     
@@ -267,23 +267,30 @@ let changeStatusPrice = (coin,change,sgl) => {
 
         if(tdX.classList.contains('animeChange')){
             tdX.classList.remove('animeChange')
-            coin.classList.toggle('animeChange2')
+            tdX.classList.add('animeChange2')
+            
             setTimeout(()=> {
                 ((coin.parentElement).children.changeforblock).classList.remove('off')
-                coin.classList.toggle('none')
-                tdX.classList.toggle('none')
-            },4600)
+              //  coin.classList.toggle('none')
+            //    tdX.classList.toggle('none')
+
+                tdX.textContent = price
+            },2625)
         } else{
 
 
-            coin.classList.remove('animeChange2')
-            tdX.classList.toggle('animeChange')
+            tdX.classList.remove('animeChange2')
+            tdX.classList.add('animeChange')
             setTimeout(()=> {
                 ((coin.parentElement).children.changeforblock).classList.add('off')
                // ((coin.parentElement).children.changeforblock).classList.add('off')
-                coin.classList.toggle('none')
-                tdX.classList.toggle('none')
-            },4600)
+               // coin.classList.toggle('none')
+               // tdX.classList.toggle('none')
+
+                tdX.textContent = coin.textContent
+                
+
+            },2625)
         }
     
         
@@ -303,6 +310,7 @@ const blockPriceAuto = (coin,price,sgl) => {
     const change = document.createElement('img')
 
     tdX.setAttribute('id',`tdX${sgl}`)
+    tdX.classList.add('tds')
     cadeado.setAttribute('src','padlock.png')
     cadeado.classList.add('blockPrice','on')
     cadeado.setAttribute('id','changeforblock')
@@ -331,12 +339,12 @@ const blockPriceAuto = (coin,price,sgl) => {
 
     span.textContent = price
 
-    changeStatusPrice(coin,change,sgl)
+    changeStatusPrice(coin,change,sgl,price)
  //   console.log(parent.children)
 }
 
 
-blockPriceAuto(eurv1,'5.98','EUR')
+//blockPriceAuto(eurv1,'5.98','EUR')
 blockPriceAuto(usdv1,'5.20','USD')
 blockPriceAuto(cadv1,'4.50','CAD')
 blockPriceAuto(gbpv1,'6.72','GBP')
