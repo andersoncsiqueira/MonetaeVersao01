@@ -264,9 +264,20 @@ let changeStatusPrice = (coin,change,sgl) => {
     change.addEventListener('click', ()=> {
         const tdX = document.querySelector(`#tdX${sgl}`) // na função a SGL tem que vir por argumento
         
+
+        if(tdX.classList.contains('animeChange')){
+            coin.classList.remove('animeChange')
+            coin.classList.toggle('animeChange2')
+            setTimeout(()=> {
+                ((coin.parentElement).children.changeforblock).classList.remove('off')
+                coin.classList.toggle('none')
+                tdX.classList.toggle('none')
+            },4600)
+        }
         tdX.classList.toggle('animeChange')
         setTimeout(()=> {
-            ((coin.parentElement).children.changeforblock).classList.toggle('off','on')
+            ((coin.parentElement).children.changeforblock).classList.add('off')
+           // ((coin.parentElement).children.changeforblock).classList.add('off')
             coin.classList.toggle('none')
             tdX.classList.toggle('none')
         },4600)
