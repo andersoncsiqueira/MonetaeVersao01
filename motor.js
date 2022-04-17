@@ -332,8 +332,6 @@ const blockPriceAuto = (coin,price,sgl) => {
     })
 
     parent.append(tdX)
-   
-
     parent.append(cadeado)
     parent.append(change)
 

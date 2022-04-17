@@ -26,15 +26,11 @@ margin-bottom: 0px;
 
 }
 
-
-
-
 section {
     margin: auto;
     margin-top: 1px;
     margin-bottom: 1px;
     
-
 }
 
 table {
@@ -80,8 +76,6 @@ th {
     margin-bottom: auto;
     margin-right: 10px;
     margin-left: 10px;
-    
-
     }
 
 td, .tds {
@@ -89,8 +83,6 @@ td, .tds {
     border: 1px solid whitesmoke;
     
 }
-
-
 
 p {
     margin: 0px;
@@ -201,16 +193,8 @@ tr :hover {
     height: 20px;
     margin-left: 15px;
     padding: 3px;
+    cursor: pointer;
 }
-
-.refreshPrice:hover {
-    width: 20px;
-    height: 20px;
-    margin-left: 15px;
-    padding: 3px;
-}
-
-
 
 .none {
     display: none;
