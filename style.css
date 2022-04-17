@@ -188,6 +188,8 @@ tr :hover {
     width: 20px;
     height: 20px;
     margin-left: 15px;
+    padding: 3px;
+    border-radius: 20px;
 }
 
 .none {
