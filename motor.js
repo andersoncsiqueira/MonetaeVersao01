@@ -342,6 +342,9 @@ const blockPriceAuto = (coin,price,sgl) => {
 }
 
 
+
+// Preços travados
+
 blockPriceAuto(eurv1,'5.98','EUR')
 blockPriceAuto(usdv1,'5.20','USD')
 blockPriceAuto(cadv1,'4.50','CAD')
