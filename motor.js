@@ -266,21 +266,25 @@ let changeStatusPrice = (coin,change,sgl) => {
         
 
         if(tdX.classList.contains('animeChange')){
-            coin.classList.remove('animeChange')
+            tdX.classList.remove('animeChange')
             coin.classList.toggle('animeChange2')
             setTimeout(()=> {
                 ((coin.parentElement).children.changeforblock).classList.remove('off')
                 coin.classList.toggle('none')
                 tdX.classList.toggle('none')
             },4600)
+        } else{
+
+
+            coin.classList.remove('animeChange2')
+            tdX.classList.toggle('animeChange')
+            setTimeout(()=> {
+                ((coin.parentElement).children.changeforblock).classList.add('off')
+               // ((coin.parentElement).children.changeforblock).classList.add('off')
+                coin.classList.toggle('none')
+                tdX.classList.toggle('none')
+            },4600)
         }
-        tdX.classList.toggle('animeChange')
-        setTimeout(()=> {
-            ((coin.parentElement).children.changeforblock).classList.add('off')
-           // ((coin.parentElement).children.changeforblock).classList.add('off')
-            coin.classList.toggle('none')
-            tdX.classList.toggle('none')
-        },4600)
     
         
     })
@@ -332,10 +336,10 @@ const blockPriceAuto = (coin,price,sgl) => {
 }
 
 
-blockPriceAuto(eurv1,'5,98','EUR')
-blockPriceAuto(usdv1,'5,20','USD')
-blockPriceAuto(cadv1,'4,5','CAD')
-blockPriceAuto(gbpv1,'6,72','GBP')
+blockPriceAuto(eurv1,'5.98','EUR')
+blockPriceAuto(usdv1,'5.20','USD')
+blockPriceAuto(cadv1,'4.50','CAD')
+blockPriceAuto(gbpv1,'6.72','GBP')
 
 
 
