@@ -275,7 +275,7 @@ let changeStatusPrice = (coin,change,sgl,price) => {
             //    tdX.classList.toggle('none')
 
                 tdX.textContent = price
-            },2625)
+            },1312.5)
         } else{
 
 
@@ -290,7 +290,7 @@ let changeStatusPrice = (coin,change,sgl,price) => {
                 tdX.textContent = coin.textContent
                 
 
-            },2625)
+            },1312.5)
         }
     
         

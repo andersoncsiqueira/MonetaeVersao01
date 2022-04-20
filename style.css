@@ -195,12 +195,12 @@ tr :hover {
 }
 
 .animeChange {
-animation: anime 2s 2s linear forwards;
+animation: anime 1s 1s linear forwards;
 border-radius: 0px;
 }
 
 .animeChange2 {
-    animation: anime2 2s 2s linear forwards;
+    animation: anime2 1s 1s linear forwards;
     border-radius: 0px;
     }
 
