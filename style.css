@@ -38,7 +38,7 @@ border-collapse: collapse;
 width: 375px;
 height: 375px;
 margin: 5px;
-border: 1px solid whitesmoke;
+border: 2px solid rgb(10, 10, 10);
 font-size: 30px;
 color: #ffdb00;
 border-radius: 10px;
@@ -71,8 +71,16 @@ th {
     height: 185px;
     width: 185px;
     border-radius: 50%;
+    border: 2px solid black;
     
     }
+
+.button:hover {
+    background-image: radial-gradient(#ffe749,#f5d0)
+}
+
+
+
 
 td, .tds {
     background: #594B02;
@@ -90,6 +98,10 @@ a {
     color: #594B02;
     font-size: 20em;
 }
+
+
+
+
 
 @media (max-width: 768px) {
    
@@ -145,7 +157,7 @@ a {
         background-color: #ffffff;
         width: 300px;
         height: 375px;
-        border: 1px solid whitesmoke;
+        border: 2px solid rgb(10, 10, 10);
         margin: 5px;
         font-size: 25px;
         color: #ffdb00;

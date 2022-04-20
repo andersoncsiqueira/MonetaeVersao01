@@ -1,22 +1,11 @@
                           // botao atualizar 
 var butao = window.document.getElementById("atual")
-butao.addEventListener("click", clicar) 
-butao.addEventListener("mouseenter", entrar)
-butao.addEventListener("mouseout", sair)
+
 butao.addEventListener("click", function() {
     
     location.reload();
 })
 
-function clicar () {
-butao.style.background = "radial-gradient(#ffe890,#f5d09b)"
-}
-function entrar () {
-    butao.style.backgroundImage = "radial-gradient(#ffe749,#f5d0 )"
-}
-function sair() {
-    butao.style.backgroundImage = "radial-gradient(#ffe749,#f5d01b)"
-}
                             // urls para a pegar as cotacoes
  
 const url = 'https://economia.awesomeapi.com.br/last/USD-BRL'
