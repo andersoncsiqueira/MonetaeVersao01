@@ -106,7 +106,14 @@ footer p{
     text-align: center;
 }
 
+
+footer div {
+    font-family: 'Money Plus';
+    font-size: 7px;
+}
+
 footer div a {
+    font-family: 'Money Plus';
     font-size: 7px;
 }
 
