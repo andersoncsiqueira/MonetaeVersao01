@@ -5,7 +5,7 @@
 }
 @font-face {
     font-family: "Money Plus";
-    src: url("Money Money Plus.ttf") format("truetype");
+    src: url("Money Money Plus.woff") format("truetype");
 }
 body {
     background-image: linear-gradient(to left, #f3f2ee,  #ececec);
