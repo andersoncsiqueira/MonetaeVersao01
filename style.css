@@ -58,9 +58,6 @@ th {
     font-weight: bold;
 }
 
-
-
-
 .button { 
     background-image: radial-gradient(#ffe749,#f5d01b);
     font-family: "Money";
@@ -78,9 +75,6 @@ th {
 .button:hover {
     background-image: radial-gradient(#ffe749,#f5d0)
 }
-
-
-
 
 td, .tds {
     background: #594B02;
@@ -106,7 +100,6 @@ footer p{
     text-align: center;
 }
 
-
 footer div {
     font-family: 'Money Plus';
     font-size: 7px;
@@ -117,9 +110,7 @@ footer div a {
     font-size: 7px;
 }
 
-
 @media (max-width: 768px) {
-   
 
     section  {
         display:flex;
