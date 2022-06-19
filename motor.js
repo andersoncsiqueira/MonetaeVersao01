@@ -61,8 +61,6 @@ const section = document.querySelector('section')
 
                  // CALCULO VENDA   
 
-
-
 const getDatas = async (url,coin,place1,place2) => {
 const response = await fetch(url)
 const datas = await response.json()
@@ -127,13 +125,7 @@ switch (coin) {
         
 }
 
-
-
-
-                    
-
-} 
-             
+}      
 
 getDatas(url,'USD',usdv1,usdv2)
 getDatas(urleur,'EUR',eurv1,eurv2)
@@ -145,16 +137,11 @@ getDatas(urlaud,'AUD',audv1,audv2)
 getDatas(urlclp,'CLP',clpv1,clpv2)
 getDatas(urlnzd,'NZD',nzdv1,nzdv2)
 
-
-
-
-
 const getDatasBuy = async (url,coin,place1,place2) => {
     const response = await fetch(url)
     const datas = await response.json()
       
     
-     
     switch (coin) {
     
         case 'USD':  
@@ -214,7 +201,6 @@ const getDatasBuy = async (url,coin,place1,place2) => {
             
     }
 
-
     } 
 
     getDatasBuy(url,'USD',usdc1,usdc2)
@@ -243,13 +229,9 @@ const blockPrice = (coin,price) => {
     
 }
 
-
-
 blockPrice(usdv3,'5,20')*/
 let changeStatusPrice = (coin,change,sgl,price) => {
-    
-    
-    
+
     change.addEventListener('click', ()=> {
         const tdX = document.querySelector(`#tdX${sgl}`) // na função a SGL tem que vir por argumento
         
@@ -267,7 +249,6 @@ let changeStatusPrice = (coin,change,sgl,price) => {
             },1312.5)
         } else{
 
-
             tdX.classList.remove('animeChange2')
             tdX.classList.add('animeChange')
             setTimeout(()=> {
@@ -277,18 +258,12 @@ let changeStatusPrice = (coin,change,sgl,price) => {
                // tdX.classList.toggle('none')
 
                 tdX.textContent = coin.textContent
-                
 
             },1312.5)
         }
     
-        
     })
 }
-
-
-
-
 
 
 const blockPriceAuto = (coin,price,sgl) => {
@@ -330,16 +305,11 @@ const blockPriceAuto = (coin,price,sgl) => {
  //   console.log(parent.children)
 }
 
-
-
 // Preços travados
 
 blockPriceAuto(eurv1,'5.98','EUR')
 //blockPriceAuto(usdv1,'5.25','USD')
 blockPriceAuto(cadv1,'4.50','CAD')
 blockPriceAuto(gbpv1,'6.99','GBP')
-
-
-
 
 
