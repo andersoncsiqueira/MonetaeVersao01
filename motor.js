@@ -309,7 +309,7 @@ const blockPriceAuto = (coin,price,sgl) => {
 
 blockPriceAuto(eurv1,'5.98','EUR')
 //blockPriceAuto(usdv1,'5.25','USD')
-blockPriceAuto(cadv1,'4.50','CAD')
+//blockPriceAuto(cadv1,'4.50','CAD')
 blockPriceAuto(gbpv1,'6.99','GBP')
 
 
