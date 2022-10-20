@@ -137,6 +137,7 @@ getDatas(urlaud,'AUD',audv1,audv2)
 getDatas(urlclp,'CLP',clpv1,clpv2)
 getDatas(urlnzd,'NZD',nzdv1,nzdv2)
 
+
 const getDatasBuy = async (url,coin,place1,place2) => {
     const response = await fetch(url)
     const datas = await response.json()
@@ -212,24 +213,10 @@ const getDatasBuy = async (url,coin,place1,place2) => {
     getDatasBuy(urlaud,'AUD',audc1,audc2)
     getDatasBuy(urlclp,'CLP',clpc1,clpc2)
     getDatasBuy(urlnzd,'NZD',nzdc1,nzdc2)
-
-
-/*const span = document.querySelector('span')
-
-const blockPrice = (coin,price) => {
-    const cadeado = document.createElement('img')
-   // cadeado.setAttribute('src','padlock.png')
-   // cadeado.classList.add('blockPrice')
-    usdv1.classList.toggle('none')
-    coin.classList.toggle('none')
-
-  //  coin.insertAdjacentElement('afterbegin',cadeado)
-
-    span.textContent = price
     
-}
+    
+    
 
-blockPrice(usdv3,'5,20')*/
 let changeStatusPrice = (coin,change,sgl,price) => {
 
     change.addEventListener('click', ()=> {
@@ -264,52 +251,100 @@ let changeStatusPrice = (coin,change,sgl,price) => {
     
     })
 }
+setTimeout(()=> {
+    
+    console.log(eurv1.textContent)
+},2000)
 
 
 const blockPriceAuto = (coin,price,sgl) => {
-    const img = document.createElement('img')
-    const span = document.createElement('span')
-    const tdX = document.createElement('td')
-    const cadeado = document.createElement('img')
-    const change = document.createElement('img')
-
-    tdX.setAttribute('id',`tdX${sgl}`)
-    tdX.classList.add('tds')
-    cadeado.setAttribute('src','padlock.png')
-    cadeado.classList.add('blockPrice','on')
-    cadeado.setAttribute('id','changeforblock')
-    change.setAttribute('src','refresh-svgrepo-com.svg')
-    change.classList.add('refreshPrice')
-    change.setAttribute('id',`changeforfreeprice${sgl}`)
-    img.setAttribute('src','padlock.png')
-    img.classList.add('blockPrice',)
-
-    tdX.textContent = price
-
-    const parent = coin.parentElement
-    const dt = Array.from(parent.children)
     
-    dt.forEach(dt => {     
-        if(dt.getAttribute('id')){
-            dt.classList.add('none')
-        }   
-    })
-
-    parent.append(tdX)
-    parent.append(cadeado)
-    parent.append(change)
-
-    span.textContent = price
-
-    changeStatusPrice(coin,change,sgl,price)
- //   console.log(parent.children)
+    
+    
+    if (price > Number(coin.textContent)) {
+        console.log("oi")
+        const img = document.createElement('img')
+        const span = document.createElement('span')
+        const tdX = document.createElement('td')
+        const cadeado = document.createElement('img')
+        const change = document.createElement('img')
+    
+        tdX.setAttribute('id',`tdX${sgl}`)
+        tdX.classList.add('tds')
+        cadeado.setAttribute('src','padlock.png')
+        cadeado.classList.add('blockPrice','on')
+        cadeado.setAttribute('id','changeforblock')
+        change.setAttribute('src','refresh-svgrepo-com.svg')
+        change.classList.add('refreshPrice')
+        change.setAttribute('id',`changeforfreeprice${sgl}`)
+        img.setAttribute('src','padlock.png')
+        img.classList.add('blockPrice',)
+    
+        tdX.textContent = price.toFixed(2)
+    
+        const parent = coin.parentElement
+        const dt = Array.from(parent.children)
+        
+        dt.forEach(dt => {     
+            if(dt.getAttribute('id')){
+                dt.classList.add('none')
+            }   
+        })
+    
+        parent.append(tdX)
+        parent.append(cadeado)
+        parent.append(change)
+    
+        span.textContent = price
+    
+        changeStatusPrice(coin,change,sgl,price)
+     //   console.log(parent.children)
+    } else {
+        console.log("Não oi")
+    }
+    
+    
+    
+    
+    
+    
 }
+
+
 
 // Preços travados
 
-blockPriceAuto(eurv1,'5.62','EUR')
-blockPriceAuto(usdv1,'5.60','USD')
-blockPriceAuto(cadv1,'4.50','CAD')
-blockPriceAuto(gbpv1,'6.99','GBP')
+let checkprice = () => {
+   
+    setTimeout(()=>{
+        blockPriceAuto(usdv1,5.60,'USD')
+        blockPriceAuto(eurv1,5.62,'EUR')
+        blockPriceAuto(cadv1,4.50,'CAD')
+        blockPriceAuto(gbpv1,6.99,'GBP')
+    
+    },2000)
+
+}
+
+checkprice()
 
 
+//usdv1
+//usdv2
+//usdv3
+//eurv1
+//eurv2
+//gbpv1
+//gbpv2
+//cadv1
+//cadv2
+//argv1
+//argv2
+//chfv1
+//chfv2
+//audv1
+//audv2
+//clpv1
+//clpv2
+//nzdv1
+//nzdv2
