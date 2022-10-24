@@ -302,12 +302,6 @@ const blockPriceAuto = (coin,price,sgl) => {
     } else {
         console.log("Não oi")
     }
-    
-    
-    
-    
-    
-    
 }
 
 
@@ -322,7 +316,7 @@ let checkprice = () => {
         blockPriceAuto(cadv1,4.50,'CAD')
         blockPriceAuto(gbpv1,6.99,'GBP')
     
-    },2000)
+    },100)
 
 }
 
