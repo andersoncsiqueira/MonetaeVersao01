@@ -311,8 +311,8 @@ const blockPriceAuto = (coin,price,sgl) => {
 let checkprice = () => {
    
     setTimeout(()=>{
-        blockPriceAuto(usdv1,5.60,'USD')
-        blockPriceAuto(eurv1,5.62,'EUR')
+        blockPriceAuto(usdv1,5.68,'USD')
+        blockPriceAuto(eurv1,5.65,'EUR')
         blockPriceAuto(cadv1,4.50,'CAD')
         blockPriceAuto(gbpv1,6.99,'GBP')
     
