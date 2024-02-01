@@ -311,7 +311,7 @@ let checkprice = () => {
     setTimeout(()=>{
       //  blockPriceAuto(usdv1,5.35,'USD')
         blockPriceAuto(eurv1,5.67,'EUR')
-        blockPriceAuto(cadv1,4.50,'CAD')
+       // blockPriceAuto(cadv1,4.50,'CAD')
         blockPriceAuto(gbpv1,6.99,'GBP')
     
     },100)
