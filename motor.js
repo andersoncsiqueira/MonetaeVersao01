@@ -312,7 +312,7 @@ let checkprice = () => {
       //  blockPriceAuto(usdv1,5.35,'USD')
         blockPriceAuto(eurv1,5.67,'EUR')
        // blockPriceAuto(cadv1,4.50,'CAD')
-        blockPriceAuto(gbpv1,6.99,'GBP')
+        blockPriceAuto(gbpv1,7,65,'GBP')
     
     },100)
 
